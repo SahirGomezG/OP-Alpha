@@ -1,8 +1,10 @@
 import React from 'react';
-import { Heading } from '@chakra-ui/core';
+import { Heading, Box, Flex } from '@chakra-ui/core';
 
 import { OnePagerData } from '../model/model';
 import { ContentCard } from './ContentCard';
+
+import ReactPlayer from 'react-player/youtube'
 
 type OnePagerVideoProps = {
   onePagerData: OnePagerData;
@@ -14,12 +16,16 @@ export const OnePagerVideo = ({
   isLoading,
 }: OnePagerVideoProps) => {
   return (
-    <ContentCard title='Pitch Video' isLoading={isLoading}>
-      <Heading as='h2' size='md' marginRight='10px'>
-        <a href={onePagerData.pitchVideoLink} target='_blank'>
-          Link to Pitch Video
-        </a>
-      </Heading>
-    </ContentCard>
+    <>
+      <ContentCard title='Pitch Video' isLoading={isLoading}>
+        <Heading as='h2' size='md' marginRight='10px'> 
+          <Box>
+            <Flex ml='10px' align="center">
+              <ReactPlayer url={onePagerData.pitchVideoLink} />
+            </Flex>
+          </Box>     
+        </Heading>
+      </ContentCard> 
+    </>
   );
 };

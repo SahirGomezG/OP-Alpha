@@ -10,7 +10,7 @@ import {
  * remotely. Feel free to alter this resolve time to render the
  * page faster during development.
  **/
-const RESOLVE_TIME_MS = 1000;
+const RESOLVE_TIME_MS = 500;
 
 /** Return all public One Pager data. */
 export const getAllPublicOnePagerData = (): Promise<OnePagerPublicData[]> =>

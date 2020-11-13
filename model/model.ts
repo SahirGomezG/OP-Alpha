@@ -11,14 +11,18 @@ export interface OnePagerPublicData {
   url: string;
   industryTags: string[];
   briefDescription: string;
+  freebieVersion: boolean;
 }
 
 /** Full one pager data model. */
 export interface OnePagerData {
   companyName: string;
   url: string;
+  logo: string;
   industryTags: string[];
+  location: string;
   briefDescription: string;
+  freebieVersion: boolean;
   detailDescription?: string;
   founders: OnePagerPerson[];
   fundraisingStage?: string;
@@ -27,4 +31,19 @@ export interface OnePagerData {
   fundraisingDetails?: string;
   pitchVideoLink?: string;
   investors?: OnePagerPerson[];
+  marketStats?: OnePagerStat[];
+}
+
+/** Market Stats data model. */
+export interface OnePagerStat {
+  title: string;
+  description?: string;
+  amount: number;
+  value: string;
+}
+
+/** Provider */
+export interface ContextProvider {
+  paid: boolean;
+  makePayment: () => void;
 }

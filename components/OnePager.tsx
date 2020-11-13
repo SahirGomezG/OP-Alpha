@@ -12,6 +12,7 @@ import { OnePagerOverview } from './OnePagerOverview';
 import { OnePagerFounders } from './OnePagerFounders';
 import { OnePagerFinances } from './OnePagerFinances';
 import { OnePagerVideo } from './OnePagerVideo';
+import { OnePagerMarket } from './OnePagerMarket';
 
 /** Renders a full one pager based on the onePagerUrl. */
 export const OnePager = ({ onePagerUrl }: { onePagerUrl: string }) => {
@@ -50,9 +51,19 @@ export const OnePager = ({ onePagerUrl }: { onePagerUrl: string }) => {
 
       <Diveder50 />
 
-      <OnePagerVideo onePagerData={onePagerData} isLoading={isLoading} />
+      {onePagerData.pitchVideoLink && 
+        <>
+          <OnePagerVideo onePagerData={onePagerData} isLoading={isLoading} />
+          <Diveder50 />
+        </>
+      }
 
-      <Diveder50 />
+      {onePagerData.marketStats && 
+        <>
+          <OnePagerMarket onePagerData={onePagerData} isLoading={isLoading} />
+          <Diveder50 />
+        </>
+      }
 
       <ContentCard isLoading={false}>
         <Flex justifyContent='center'>

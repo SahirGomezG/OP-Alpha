@@ -1,18 +1,16 @@
-import React, {useEffect} from 'react';
-import Router from "next/router";
+import React from 'react';
 
 import { ONE_PAGERS_PUBLIC_DATA_ARRAY } from '../data/onepagers';
 import { OnePager } from '../components/OnePager';
 import { OnePagerPublicData } from '../model/model';
-import { Spinner, Box } from '@chakra-ui/core';
+
 
 type OnePagerPageData = {
   onePagerUrl: string;
 };
 
 /** Render a One Pager Page. */
-function OnePagerPage({ onePagerUrl }: OnePagerPageData) {
-  //const [onePagerData, setOnePager]: [OnePagerData, any] = React.useState( EMPTY_ONE_PAGER );
+const OnePagerPage = ({ onePagerUrl }: OnePagerPageData) => {
   return <OnePager onePagerUrl={onePagerUrl}></OnePager>;
 }
 

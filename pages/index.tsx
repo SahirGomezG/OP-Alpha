@@ -1,8 +1,3 @@
-/*import Home from '../components/Home';
-
-export default function Index() {
-  return <Home />;
-}*/
 import { useState, useEffect } from "react";
 import Home from '../components/Home';
 import Cookie from "js-cookie";
@@ -24,20 +19,8 @@ const Index = ({ initialCookieValue }) => {
   const handleUnsubscribe = () => {
     setRememberMe(false)
   }
-
   return (
-    <>
     <Home paid={rememberMe} handlePayment={handlePayment} handleUnsubscribe={handleUnsubscribe}/>
-    <div>
-      remember me
-      <input
-        type="checkbox"
-        value={rememberMe}
-        checked={rememberMe}
-        onChange={e => setRememberMe(e.target.checked)}
-      />
-    </div>
-    </>
   );
 };
 
